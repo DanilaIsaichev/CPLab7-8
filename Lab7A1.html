@@ -1,0 +1,53 @@
+<html>
+ <head>
+  <title>Лабораторная работа 7А.1</title><meta charset="utf-8">
+ </head>
+ <body>
+    <script>{
+        function makeCanvas(x, y) {
+          const canvas = document.createElement('canvas'),
+                ctx = canvas.getContext('2d');
+          canvas.setAttribute('width', x);
+          canvas.setAttribute('height', y);
+          return { canvas, ctx };
+        }
+  
+        const { canvas, ctx } = makeCanvas(200, 200);
+        document.body.appendChild(canvas);
+        ctx.strokeStyle = 'blue';
+        ctx.setTransform(0, -1, 1, 0, 20, 188);
+        
+        //I
+        ctx.beginPath();
+        ctx.moveTo(20, 20);
+        ctx.lineTo(70, 20);
+        ctx.moveTo(45, 20);
+        ctx.lineTo(45, 100);
+        ctx.moveTo(20, 100);
+        ctx.lineTo(70, 100);
+        ctx.stroke();
+  
+        //D
+        ctx.beginPath();
+        ctx.moveTo(100, 20);
+        ctx.lineTo(100, 100);
+        ctx.moveTo(100, 90);
+        ctx.lineTo(150, 100);
+        ctx.lineTo(150, 20);
+        ctx.lineTo(100, 20);
+        ctx.stroke();
+  
+        //.
+        ctx.beginPath();
+        ctx.strokeRect(85, 100, 2, 2);
+        ctx.strokeRect(165, 100, 2, 2);
+  
+        //Besie
+        ctx.beginPath();
+        ctx.strokeStyle = 'red';
+        ctx.moveTo(20, 105);
+        ctx.quadraticCurveTo(85, 150, 168, 105);
+        ctx.stroke();
+    }</script>
+ </body>
+</html>
